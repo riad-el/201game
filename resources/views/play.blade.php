@@ -9,14 +9,19 @@
 </head>
 <body>
     <div class="container">
-    <form class="form-inline">
+    <form class="form-inline" action="{{route('play')}}" method="POST">
         
         <div class="form-group mx-sm-3 mb-2">
           <label for="inputPassword2" class="sr-only">Choisir Le nombre</label>
-          <input type="number" class="form-control" id="inputPassword2" placeholder="Nombre">
+          <input type="number" class="form-control" id="inputPassword2" placeholder="Nombre" name="number">
+       
         </div>
+        @csrf
         <button type="submit" class="btn btn-primary mb-2">Deviner</button>
       </form>
+    </div>
+    <div class="alert alert-primary" role="alert">
+     {{$message}}
     </div>
 </body>
 </html>
