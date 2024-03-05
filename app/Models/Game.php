@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Game extends Model
 {
@@ -11,9 +12,9 @@ class Game extends Model
     protected $fillable = [
         'nom',
         'rand',
-        'nb1',
-        'nb2',
-        'nb3','nb4',
-        'nb5',
+    
     ];
+    public function plays(){
+        return $this->HasMany(Play::class);
+    }
 }
